@@ -54,3 +54,7 @@ function fetchWeatherData(location) {
 
 fetchWeatherData("Addis Ababa, Ethiopia");
 
+searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    fetchWeatherData(searchBar.value.charAt(0).toUpperCase() + searchBar.value.slice(1));
+})
