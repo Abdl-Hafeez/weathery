@@ -176,7 +176,13 @@ hr {
     transition: color 1s;
 }
 
-.day div {
+.next-days-temp-and-condition {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.next-days-temp-and-condition > div, .next-days-weekday-and-date {
     display: flex;
     flex-direction: column;
 }
