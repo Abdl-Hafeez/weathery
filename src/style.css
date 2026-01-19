@@ -6,13 +6,16 @@
     margin: 0;
     padding: 0;
 }
+html, body {
+    height: 100%;
+}
 body {
     color: #fff;
-    font-family: 'Rubik Scribble', sans-serif;
+    font-family: 'Rubik', sans-serif;
     background-color: #42457b;
     background-image: url(../assets/pexels-viniciusvieirafotografia-2560246.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     display: flex;
 }
 
@@ -20,7 +23,8 @@ body {
     width: 65%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: center;
+    gap: 4rem;
 }
 
 #logo {
@@ -46,17 +50,55 @@ body {
     color: rgb(236, 101, 11);
 }
 
-h1 {
-    margin-bottom: 15rem;
-    margin-left: 3rem;
-    position: fixed;
+#search {
+    margin: 0 auto;
+    width: 50%;
     display: flex;
-    justify-content: start;
+}
+
+#search-bar {
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border: 1px solid #ccc;
+    border-right: none;
+    padding: 0 10px;
+}
+
+#search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+}
+
+#search-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-left: none;
+}
+
+.search-icon {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+h1 {
+    margin-left: 3rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-h1 div {
+h1 > div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -64,16 +106,18 @@ h1 div {
 }
 
 .reading {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
-.city, .weather-icon {
-    font-size: 3rem;
+.city, .current-weather-icon {
+    font-size: 2rem;
     margin-bottom: -5px;
     line-height: 1;
 }
 
-.time-and-date, .condition {
+.time-and-date, .current-condition {
+    display: flex;
+    flex-direction: column;
     line-height: 1;
     font-size: 15px;
 }
@@ -85,54 +129,20 @@ h1 div {
     align-items: center;
     gap: 4px;}
 
-.weather-icon {
+.current-weather-icon {
     display: block;
     font-size: 3rem;
     line-height: 1;
 }
 
 #side {
-background: rgba(4, 170, 109, 0.3);
-width: 35%;
+    background: rgba(4, 170, 109, 0.3);
+    width: 35%;
+    padding-top: 2rem;
+    min-height: fit-content;
 }
 
-#search {
-    padding: 2rem 2rem 1rem;
-    display: flex;
-    gap: 16px;
-    height: 5rem;
-}
-
-#search-bar {
-    outline: none;
-    font-size: 1rem;
-    font-weight: 600;
-    font-family: 'Rubik Scribble', sans-serif;
-    width: 60%;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    border-bottom: 1px solid #ccc;
-}
-
-#search-bar::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-#search-btn {
-    background-color: rgba(236, 101, 11, 0.5);
-    border: none;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.search-icon {
-    font-size: 1.5rem;
-    color: #fff;
-}
-
-.weather-details, .next-days {
+.next-days {
     padding: 1rem 2rem;
 }
 
@@ -141,23 +151,9 @@ hr {
     margin-right: 2rem;
 }
 
-.weather-details h3, .next-days h3 {
+.next-days h3 {
     background-color: rgba(236, 101, 11, 0.4);
     padding: 5px;
-}
-
-.details {
-    padding-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 1rem;
-}
-
-.detail {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
 }
 
 .days {
