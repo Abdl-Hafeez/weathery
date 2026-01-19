@@ -10,9 +10,6 @@ const date = document.querySelector('.date');
 const currentWeatherIcon = document.querySelector('.current-weather-icon');
 const currentCondition = document.querySelector('.current-condition');
 
-const weatherParameter = document.querySelectorAll('.parameter');
-const weatherValue = document.querySelectorAll('.value');
-
 const daysReading = document.querySelectorAll('.days-reading');
 const weatherLabel = document.querySelectorAll('.weather-label');
 const weekday = document.querySelectorAll('.weekday');
@@ -26,7 +23,7 @@ function fetchWeatherData(location) {
         city.textContent = data.address;
         reading.textContent = `${data.currentConditions.feelslike}°`;
         time.textContent = data.currentConditions.datetime;
-        date.textContent = `${new Date(data.days[0].datetime).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}`;
+        date.textContent = `${new Date(data.days[0].datetime).toLocaleDateString('en-US', {weekday: 'long', month: 'short', day: 'numeric', year: 'numeric'})}`;
         currentCondition.textContent = data.currentConditions.conditions;
         // currentWeatherIcon.innerHTML = `<img class='weather-iconsrc='' alt='weather-icon'>`
 
