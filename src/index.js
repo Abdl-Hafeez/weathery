@@ -12,6 +12,7 @@ const currentCondition = document.querySelector('.current-condition');
 
 const daysReading = document.querySelectorAll('.days-reading');
 const weatherLabel = document.querySelectorAll('.weather-label');
+const nextDaysWeatherIcon = document.querySelectorAll('.next-days-weather-icon');
 const weekday = document.querySelectorAll('.weekday');
 const weekdayDate = document.querySelectorAll('.date');
 
@@ -25,7 +26,9 @@ function fetchWeatherData(location) {
         time.textContent = data.currentConditions.datetime;
         date.textContent = `${new Date(data.days[0].datetime).toLocaleDateString('en-US', {weekday: 'long', month: 'short', day: 'numeric', year: 'numeric'})}`;
         currentCondition.textContent = data.currentConditions.conditions;
-        // currentWeatherIcon.innerHTML = `<img class='weather-iconsrc='' alt='weather-icon'>`
+
+        const currentIconPath = `/icons/2nd-Set-Monochrome/${data.currentConditions.icon}.svg`;
+        currentWeatherIcon.innerHTML = `<img src='${currentIconPath}' alt='${data.currentConditions.icon}'>`;
 
         daysReading.forEach((day, index) => {
             day.textContent = `${data.days[index + 1].feelslike}°`;
@@ -33,6 +36,11 @@ function fetchWeatherData(location) {
 
         weatherLabel.forEach((day, index) => {
             day.textContent = data.days[index + 1].conditions;
+        });
+
+        nextDaysWeatherIcon.forEach((day,index) => {
+            const nextDaysIconPath = `/icons/2nd-Set-Monochrome/${data.days[index +1 ].icon}.svg`;
+            day.innerHTML = `<img src='${nextDaysIconPath}' alt='${data.days[index + 1].icon}'>`;
         });
 
         weekday.forEach((day, index) => {
