@@ -115,6 +115,11 @@ h1 > div {
     line-height: 1;
 }
 
+.current-weather-icon img { 
+    width: 5rem;
+    filter: invert(50%) sepia(100%) saturate(1000%);
+} 
+
 .time-and-date, .current-condition {
     display: flex;
     flex-direction: column;
@@ -197,4 +202,9 @@ hr {
 
 .date {
     font-size: 0.7rem;
+}
+
+.next-days-weather-icon img { 
+    width: 3rem;
+    filter: invert(50%) sepia(100%) saturate(1000%);
 }
