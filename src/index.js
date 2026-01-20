@@ -13,6 +13,7 @@ const currentCondition = document.querySelector('.current-condition');
 const daysReading = document.querySelectorAll('.days-reading');
 const weatherLabel = document.querySelectorAll('.weather-label');
 const nextDaysWeatherIcon = document.querySelectorAll('.next-days-weather-icon');
+const feelslikeReading = document.querySelectorAll('.feelslike-reading');
 const weekday = document.querySelectorAll('.weekday');
 const weekdayDate = document.querySelectorAll('.date');
 
@@ -42,6 +43,10 @@ function fetchWeatherData(location) {
             const nextDaysIconPath = `/icons/2nd-Set-Monochrome/${data.days[index +1 ].icon}.svg`;
             day.innerHTML = `<img src='${nextDaysIconPath}' alt='${data.days[index + 1].icon}'>`;
         });
+
+        feelslikeReading.forEach((day, index) => {
+            day.textContent = `${data.days[index + 1].feelslike}°`;
+        })
 
         weekday.forEach((day, index) => {
             day.textContent = new Date(data.days[index + 1].datetime).toLocaleDateString('en-US', {weekday: 'short'});
