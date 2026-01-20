@@ -192,12 +192,26 @@ hr {
     flex-direction: column;
 }
 
-.days-reading {
+.days-reading, .feelslike-reading {
     font-size: 1.5rem;
 }
 
-.weather-label, .weekday {
+.weather-label, .feelslike-title, .weekday {
     font-size: 0.9rem;
+}
+
+.next-days-feelslike {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.next-days-feelslike span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .date {
