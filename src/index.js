@@ -22,7 +22,7 @@ function fetchWeatherData(location) {
     return response.json();
     }).then(data => {
         city.textContent = data.address;
-        reading.textContent = `${data.currentConditions.feelslike}°`;
+        reading.textContent = `${data.currentConditions.temp}°`;
         time.textContent = data.currentConditions.datetime;
         date.textContent = `${new Date(data.days[0].datetime).toLocaleDateString('en-US', {weekday: 'long', month: 'short', day: 'numeric', year: 'numeric'})}`;
         currentCondition.textContent = data.currentConditions.conditions;
@@ -31,7 +31,7 @@ function fetchWeatherData(location) {
         currentWeatherIcon.innerHTML = `<img src='${currentIconPath}' alt='${data.currentConditions.icon}'>`;
 
         daysReading.forEach((day, index) => {
-            day.textContent = `${data.days[index + 1].feelslike}°`;
+            day.textContent = `${data.days[index + 1].temp}°`;
         });
 
         weatherLabel.forEach((day, index) => {
