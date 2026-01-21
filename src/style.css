@@ -21,10 +21,12 @@ body {
 
 #main {
     width: 65%;
+    margin-top: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4rem;
+    align-items: center;
+    gap: 2rem;
 }
 
 #logo {
@@ -91,7 +93,6 @@ body {
 }
 
 h1 {
-    margin-left: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,12 +133,52 @@ h1 > div {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4px;}
+    gap: 4px;
+}
 
-.current-weather-icon {
-    display: block;
-    font-size: 3rem;
-    line-height: 1;
+.weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 2rem;
+}
+
+.detail {
+    background-color: rgba(236, 101, 11, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.detail-title-and-reading {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-feels-like-icon img {
+    width: 2rem;
+    filter: brightness(0) invert(1);
+}
+
+.detail:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+} 
+
+.sunrise-detail, .sunset-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.sunrise-detail .material-symbols-outlined {
+    
+}
+.sunset-detail .material-symbols-outlined  {
+    color: rgb(236, 101, 11);
 }
 
 #side {
@@ -178,6 +219,7 @@ hr {
     background-color: rgba(236, 101, 11, 0.2);
     padding: 0.5rem;
     display: flex;
+    border-radius: 5%;
 }
 
 .day div:hover {
@@ -185,8 +227,13 @@ hr {
     transition: color 1s;
 }
 
+
 .next-days-weekday-and-date {
     writing-mode:sideways-lr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .date {
@@ -195,16 +242,17 @@ hr {
 
 .next-days-temp-and-condition {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 5px;
     flex: 1;
 }
 
-.next-days-temp-and-condition > div, .next-days-weekday-and-date {
+.next-days-temp-and-condition > div {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }
 
 .days-reading, .feelslike-reading {
