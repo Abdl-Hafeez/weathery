@@ -107,7 +107,29 @@ h1 > div {
 }
 
 .reading {
+    align-items: center;
+}
+
+.main-temp-reading {
     font-size: 3rem;
+}
+
+.reading > span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.reading > span > span {
+    font-size: 1.3rem;
+}
+
+.reading > span > span, .max-min-feelslike > span > span, .next-days-max-min-feelslike > span > span {
+    color: rgb(236, 101, 11);
+}
+
+.max-temp-reading, .min-temp-reading {
+    font-size: 1rem;
 }
 
 .city, .current-weather-icon {
@@ -162,6 +184,17 @@ h1 > div {
     filter: brightness(0) invert(1);
 }
 
+.max-min-feelslike, .next-days-max-min-feelslike {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.max-min-feelslike > span > span, .next-days-max-min-feelslike > span > span {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 .detail:last-child {
     display: flex;
     justify-content: space-between;
@@ -172,10 +205,6 @@ h1 > div {
 .sunrise-detail, .sunset-detail {
     display: flex;
     flex-direction: column;
-}
-
-.sunrise-detail .material-symbols-outlined {
-    
 }
 .sunset-detail .material-symbols-outlined  {
     color: rgb(236, 101, 11);
@@ -279,6 +308,6 @@ hr {
 }
 
 .next-days-weather-icon img { 
-    width: 3rem;
+    width: 2rem;
     filter: brightness(0) invert(1);
 }
