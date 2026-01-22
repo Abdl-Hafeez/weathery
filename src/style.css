@@ -54,7 +54,7 @@ body {
 
 #search {
     margin: 0 auto;
-    width: 50%;
+    width: 100%;
     display: flex;
 }
 
@@ -90,6 +90,27 @@ body {
 .search-icon {
     font-size: 1.5rem;
     color: #fff;
+}
+
+.form-and-convert-btn {
+    display: flex;
+    gap: 30px;
+}
+
+.convert-btn {
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    width: 4rem;
+    border: 1px solid #ccc;
+    border-radius: 42%;
+}
+
+.convert-btn:hover, .convert-btn:focus {
+    background-color: rgb(236, 101, 11);
+    border: none;
 }
 
 h1 {
